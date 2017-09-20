@@ -2,7 +2,7 @@
 
 @section('content')
 
-    {!! Form::model($message, ['route' => ['messages.update', $message], 'method' => 'PUT']) !!}
+    {!! Form::model($message, ['route' => ['admin.messages.update', $message], 'method' => 'PUT']) !!}
 
         @if ($errors->any())
                 @foreach ($errors->all() as $error)

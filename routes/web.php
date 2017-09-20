@@ -22,71 +22,90 @@ Route::group([
 
 	Route::get('admin/users', [
 		'uses' => 'UsersController@index',
-		'as' => 'users.index'
+		'as' => 'admin.users.index'
 	]);
 
 	Route::get('admin/users/create', [
 		'uses' => 'UsersController@create',
-		'as' => 'users.create'
+		'as' => 'admin.users.create'
 	]);
 
 	Route::post('admin/users/store', [
 		'uses' => 'UsersController@store',
-		'as' => 'users.store'
+		'as' => 'admin.users.store'
 	]);
 
 	Route::get('admin/users/show/{user}', [
 		'uses' => 'UsersController@show',
-		'as' => 'users.show'
+		'as' => 'admin.users.show'
 	]);
 
 	Route::get('admin/users/edit/{user}', [
 		'uses' => 'UsersController@edit',
-		'as' => 'users.edit'
+		'as' => 'admin.users.edit'
 	]);
 
 	Route::put('admin/users/{user}', [
 		'uses' => 'UsersController@update',
-		'as' => 'users.update'
+		'as' => 'admin.users.update'
 	]);
 
 	Route::delete('admin/users/{user}', [
 		'uses' => 'UsersController@destroy',
-		'as' => 'users.delete'
+		'as' => 'admin.users.delete'
 	]);
 
 	Route::get('admin/messages', [
 		'uses' => 'MessagesController@index',
-		'as' => 'messages.index'
+		'as' => 'admin.messages.index'
 	]);
 
 	Route::get('admin/messages/create', [
 		'uses' => 'MessagesController@create',
-		'as' => 'messages.create'
+		'as' => 'admin.messages.create'
 	]);
 
 	Route::post('admin/messages/store', [
 		'uses' => 'MessagesController@store',
-		'as' => 'messages.store'
+		'as' => 'admin.messages.store'
 	]);
 
 	Route::get('admin/messages/edit/{message}', [
 		'uses' => 'MessagesController@edit',
-		'as' => 'messages.edit'
+		'as' => 'admin.messages.edit'
 	]);
 
 	Route::put('admin/messages/{message}', [
 		'uses' => 'MessagesController@update',
-		'as' => 'messages.update'
+		'as' => 'admin.messages.update'
 	]);
 
 	Route::delete('admin/messages/{message}', [
 		'uses' => 'MessagesController@destroy',
-		'as' => 'messages.delete'
+		'as' => 'admin.messages.delete'
 	]);
 
 });
 
+Route::get('messages', [
+		'uses' => 'UserMessageController@index',
+		'as' => 'messages.index'
+]);
+
+Route::get('messages/create', [
+		'uses' => 'UserMessageController@create',
+		'as' => 'messages.create'
+]);
+
+	Route::post('messages/store', [
+		'uses' => 'UserMessageController@store',
+		'as' => 'messages.store'
+]);
+
+Route::get('messages/show/{message}', [
+	'uses' => 'UserMessageController@show',
+	'as' => 'messages.show'
+]);
 
 
 Auth::routes();
