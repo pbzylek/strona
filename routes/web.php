@@ -20,67 +20,67 @@ Route::group([
  'roles' => ['Admin']
 ], function() {
 
-	Route::get('users', [
+	Route::get('admin/users', [
 		'uses' => 'UsersController@index',
 		'as' => 'users.index'
 	]);
 
-	Route::get('users/create', [
+	Route::get('admin/users/create', [
 		'uses' => 'UsersController@create',
 		'as' => 'users.create'
 	]);
 
-	Route::post('users/store', [
+	Route::post('admin/users/store', [
 		'uses' => 'UsersController@store',
 		'as' => 'users.store'
 	]);
 
-	Route::get('users/show/{user}', [
+	Route::get('admin/users/show/{user}', [
 		'uses' => 'UsersController@show',
 		'as' => 'users.show'
 	]);
 
-	Route::get('users/edit/{user}', [
+	Route::get('admin/users/edit/{user}', [
 		'uses' => 'UsersController@edit',
 		'as' => 'users.edit'
 	]);
 
-	Route::put('users/{user}', [
+	Route::put('admin/users/{user}', [
 		'uses' => 'UsersController@update',
 		'as' => 'users.update'
 	]);
 
-	Route::delete('users/{user}', [
+	Route::delete('admin/users/{user}', [
 		'uses' => 'UsersController@destroy',
 		'as' => 'users.delete'
 	]);
 
-	Route::get('messages', [
+	Route::get('admin/messages', [
 		'uses' => 'MessagesController@index',
 		'as' => 'messages.index'
 	]);
 
-	Route::get('messages/create', [
+	Route::get('admin/messages/create', [
 		'uses' => 'MessagesController@create',
 		'as' => 'messages.create'
 	]);
 
-	Route::post('messages/store', [
+	Route::post('admin/messages/store', [
 		'uses' => 'MessagesController@store',
 		'as' => 'messages.store'
 	]);
 
-	Route::get('messages/edit/{message}', [
+	Route::get('admin/messages/edit/{message}', [
 		'uses' => 'MessagesController@edit',
 		'as' => 'messages.edit'
 	]);
 
-	Route::put('messages/{message}', [
+	Route::put('admin/messages/{message}', [
 		'uses' => 'MessagesController@update',
 		'as' => 'messages.update'
 	]);
 
-	Route::delete('messages/{message}', [
+	Route::delete('admin/messages/{message}', [
 		'uses' => 'MessagesController@destroy',
 		'as' => 'messages.delete'
 	]);

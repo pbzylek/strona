@@ -89,7 +89,41 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->update($request->all());
+        $old_password = $user->password;
+
+        if($request['new_password']=='')
+        {
+            $user->update([
+                'login' => $request['login'],
+                'email' => $request['email'],
+                'password' => $old_password,
+                'imie' => $request['imie'],
+                'nazwisko' => $request['nazwisko'],
+                'firma' => $request['firma'],
+                'nip' => $request['nip'],
+                'adres' => $request['adres'],
+                'miejscowosc' => $request['miejscowosc'],
+                'kod' => $request['kod'],
+                'telefon' => $request['telefon'],
+            ]);
+        }
+        else
+        {
+            $user->update([
+                'login' => $request['login'],
+                'email' => $request['email'],
+                'password' => bcrypt($request['new_password']),
+                'imie' => $request['imie'],
+                'nazwisko' => $request['nazwisko'],
+                'firma' => $request['firma'],
+                'nip' => $request['nip'],
+                'adres' => $request['adres'],
+                'miejscowosc' => $request['miejscowosc'],
+                'kod' => $request['kod'],
+                'telefon' => $request['telefon'],
+            ]);
+        }
+
         return redirect()->route('users.index');
     }
 

@@ -84,7 +84,13 @@
                 <div class="links">
                     <a href="{{ url('/') }}">Strona Główna</a>
                     <a href="{{ url('/kontakt') }}">Kontakt</a>
-                    <a href="{{ route('login') }}">Logowanie</a>
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Logowanie</a>
+                    @endauth
+                @endif
                 </div>
             </div>
         </div>
