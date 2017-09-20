@@ -19,7 +19,7 @@
 
 		<div class="form-group">
 			{!! Form::label('do_id', "do_id:") !!}
-			<select name='do_id'>
+			<select multiple name='do_id'>
 				@foreach($users as $user)
 			  <option value="{!! $user->id !!}">{!! $user->imie !!} {!! $user->nazwisko !!}</option>
 			  	@endforeach

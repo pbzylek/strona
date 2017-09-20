@@ -2,11 +2,11 @@
 @extends('layout')
 
 @section('content')
-    <a class="btn btn-primary" href="{{route('messages.create')}}">Dodaj stronę</a>
+    <a class="btn btn-primary" href="{{route('messages.create')}}">Nowa wiadomość</a><br>
 
     <table class="table table-hover">
         <tr>
-            Odebrane
+            <th>Odebrane</th>
         </tr>
         <tr>
             <th>Data</th>
@@ -19,7 +19,7 @@
                 <td>{{ $message->created_at }}</td>
                 <td>{{ $message->temat }}</td>
                 <td>{{ $message->tresc }}</td>
-                <td><a class="btn btn-info" href="{{route('messages.show', $message)}}">Edit</a></td>
+                <td><a class="btn btn-outline-info my-2 my-sm-0" href="{{route('messages.show', $message)}}">Więcej</a></td>
             </tr>
         @endforeach
     </table>
@@ -29,7 +29,7 @@
 
     <table class="table table-hover">
         <tr>
-            Wysłane
+            <th>Wysłane</th>
         </tr>
         <tr>
             <th>Data</th>
@@ -42,12 +42,10 @@
                 <td>{{ $message2->created_at }}</td>
                 <td>{{ $message2->temat }}</td>
                 <td>{{ $message2->tresc }}</td>
-                <td><a class="btn btn-info" href="{{route('messages.show', $message2)}}">Edit</a></td>
+                <td><a class="btn btn-outline-info my-2 my-sm-0" href="{{route('messages.show', $message2)}}">Więcej</a></td>
             </tr>
         @endforeach
     </table>
-
     {{ $messages2->links() }}
-
 
 @endsection
