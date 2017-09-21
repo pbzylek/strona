@@ -2,6 +2,12 @@
 @extends('layout')
 
 @section('content')
+
+@if (Session::has('success'))
+    <div class="alert alert-primary" role="alert">
+        {{ Session::get('success') }}
+    </div>
+@endif
     <a class="btn btn-primary" href="{{route('admin.messages.create')}}">Dodaj stronę</a>
 
     <table class="table table-hover">

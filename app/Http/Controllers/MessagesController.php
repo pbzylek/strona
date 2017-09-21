@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Messages;
 use App\User;
+use Session;
 
 class MessagesController extends Controller
 {
@@ -33,7 +34,7 @@ class MessagesController extends Controller
     public function create()
     {
         $users=User::all();
-        return view('messages.create', compact('users'));
+        return view('admin.messages.create', compact('users'));
     }
 
     /**
@@ -45,7 +46,8 @@ class MessagesController extends Controller
     public function store(Request $request)
     {
         Messages::create($request->all());
-        return redirect()->route('messages.index');
+        Session::flash('success', 'Wiadomość została wysłana poprawnie');
+        return redirect()->route('admin.messages.index');
     }
 
     /**

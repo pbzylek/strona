@@ -2,6 +2,6 @@
 
 @section('content')
 
-<img src="../../akcyza.png" alt="">
+<img class="" src="../../img/akcyza.png" alt="">
 
 @endsection
