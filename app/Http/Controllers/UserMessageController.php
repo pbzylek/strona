@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Messages;
 use Auth;
+use Session;
 
 class UserMessageController extends Controller
 {
@@ -46,6 +47,7 @@ class UserMessageController extends Controller
     public function store(Request $request)
     {
         Messages::create($request->all());
+        Session::flash('success', 'Wiadomość została wysłana poprawnie');
         return redirect()->route('messages.index');
     }
 

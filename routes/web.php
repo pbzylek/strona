@@ -94,7 +94,7 @@ Route::group([
 Route::get('messages', [
 		'uses' => 'UserMessageController@index',
 		'as' => 'messages.index'
-])->name('messages');
+]);
 
 Route::get('messages/create', [
 		'uses' => 'UserMessageController@create',
@@ -104,12 +104,12 @@ Route::get('messages/create', [
 	Route::post('messages/store', [
 		'uses' => 'UserMessageController@store',
 		'as' => 'messages.store'
-])->name('messages.create');
+]);
 
 Route::get('messages/show/{message}', [
 	'uses' => 'UserMessageController@show',
 	'as' => 'messages.show'
-])->name('messages.show');
+]);
 
 
 Auth::routes();

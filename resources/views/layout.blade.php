@@ -62,6 +62,11 @@
 
     <div class="container">
       <!-- Example row of columns -->
+      @if (Session::has('success'))
+          <div class="alert alert-success" role="alert">
+              {{ Session::get('success') }}
+          </div>
+      @endif
       @yield('content')
 
       <hr>
