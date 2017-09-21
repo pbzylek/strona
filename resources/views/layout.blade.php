@@ -20,7 +20,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#"><img class="logo_navbar" src="../../img/akcyza.png" alt="Logo Biur Rachunkowe AKCYZA"></a>
+      <a class="navbar-brand" href="{{ route('index') }}"><img class="logo_navbar" src="../../img/akcyza.png" alt="Logo Biur Rachunkowe AKCYZA"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Strona Główna</a>
+            <a class="nav-link" href="{{ route('index') }}">Strona Główna</a>
           </li>
           @guest
 		  @else
@@ -40,7 +40,7 @@
           </li>
 		  @endguest
 		  <li class="nav-item">
-            <a class="nav-link" href="#">Kontakt</a>
+            <a class="nav-link" href="{{ route('kontakt') }}">Kontakt</a>
           </li>
         </ul>
 
