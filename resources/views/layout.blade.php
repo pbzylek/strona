@@ -65,18 +65,27 @@
       <!-- Komunikaty Błędów -->
       @if (Session::has('success'))
           <div class="alert alert-success" role="alert">
+          <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
               {{ Session::get('success') }}
           </div>
       @endif
 
       @if ($errors->has('email'))
           <div class="alert alert-danger" role="alert">
+          <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
               {{ $errors->first('email') }}
           </div>
       @endif
 
       @if ($errors->has('password'))
           <div class="alert alert-danger" role="alert">
+          <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
               {{ $errors->first('password') }}
           </div>
       @endif
@@ -97,5 +106,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/custom.js"></script>
   </body>
 </html>
