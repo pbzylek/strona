@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Biuro Rachunkowe AKCYZA</title>
+    <title>@yield('title') | Biuro Rachunkowe AKCYZA</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
@@ -51,8 +51,8 @@
 			Zalogowany jako &nbsp;<a class="btn btn-outline-success my-2 my-sm-0" href="{{ route('login') }}">{{ Auth::user()->imie }} {{ Auth::user()->nazwisko }}</a>
 			&nbsp;<a class="btn btn-outline-danger my-2 my-sm-0" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Wyloguj</a>
 			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
+        {{ csrf_field() }}
+      </form>
         @endguest
         </li>
       </div>
@@ -61,12 +61,27 @@
 
 
     <div class="container">
-      <!-- Example row of columns -->
+
+      <!-- Komunikaty Błędów -->
       @if (Session::has('success'))
           <div class="alert alert-success" role="alert">
               {{ Session::get('success') }}
           </div>
       @endif
+
+      @if ($errors->has('email'))
+          <div class="alert alert-danger" role="alert">
+              {{ $errors->first('email') }}
+          </div>
+      @endif
+
+      @if ($errors->has('password'))
+          <div class="alert alert-danger" role="alert">
+              {{ $errors->first('password') }}
+          </div>
+      @endif
+
+      <!-- Wstawiane ciało strony -->
       @yield('content')
 
       <hr>

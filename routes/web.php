@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 })->name('index');
 
 Route::get('/kontakt', function () {
@@ -113,5 +113,3 @@ Route::get('messages/show/{message}', [
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
