@@ -64,8 +64,8 @@
 
       <!-- Komunikaty Błędów -->
       @if (Session::has('success'))
-          <div class="alert alert-success" role="alert">
-          <button type="button" class="close" aria-label="Close">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
               {{ Session::get('success') }}
@@ -73,8 +73,8 @@
       @endif
 
       @if ($errors->has('email'))
-          <div class="alert alert-danger" role="alert">
-          <button type="button" class="close" aria-label="Close">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
               {{ $errors->first('email') }}
@@ -82,9 +82,9 @@
       @endif
 
       @if ($errors->has('password'))
-          <div class="alert alert-danger" role="alert">
-          <button type="button" class="close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
           </button>
               {{ $errors->first('password') }}
           </div>
