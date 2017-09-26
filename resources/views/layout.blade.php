@@ -3,18 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <meta name="description" content="biuro rachunkowe akcyza ostrzeszów">
+    <meta name="author" content="Paweł Bzyl">
+    <link rel="icon" href="{{ url('img/favicon.ico') }}">
 
     <title>@yield('title') | Biuro Rachunkowe AKCYZA</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
+	  <link rel="stylesheet" href="{{ url('css/css/bootstrap-reboot.min.css') }}">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="../../css/custom.css">
+    <link rel="stylesheet" href="{{ url('css/custom.css') }}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
 
   <body>
@@ -33,7 +36,7 @@
           @guest
 		  @else
 		  <li class="nav-item">
-            <a class="nav-link" href="#">Wiadomości</a>
+            <a class="nav-link" href="{{ route('messages.index') }}">Wiadomości</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Edytuj profil</a>
@@ -104,8 +107,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/custom.js"></script>
+    <script src="{{ url('js/jquery-3.2.1.slim.min.js') }}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{{ url('js/bootstrap.min.js') }}"></script>
+    <script src="{{ url('js/custom.js') }}"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-	{!! Form::open(['route'=>'users.store']) !!}
+	{!! Form::open(['route'=>'admin.users.store']) !!}
 
 	@if ($errors->any())
 		<ul class="alert alert-danger">

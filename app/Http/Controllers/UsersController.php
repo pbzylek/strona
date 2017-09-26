@@ -55,7 +55,7 @@ class UsersController extends Controller
             'kod' => $request['kod'],
             'telefon' => $request['telefon'],
         ]);
-        return redirect()->route('users.index');
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -136,6 +136,6 @@ class UsersController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index');
+        return redirect()->route('admin.users.index');
     }
 }

@@ -1,7 +1,15 @@
+html {
+  font-family: 'Lato', sans-serif;
+}
+
 body {
-  padding-top: 6rem;
+  padding-top: 10rem;
 }
 
 .logo_navbar {
-	width: 70px;
+	width: 120px;
+}
+
+.nav-link {
+  font-size: 25px;
 }

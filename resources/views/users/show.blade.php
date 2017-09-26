@@ -8,6 +8,6 @@
         {!! $user->email !!} <br>
         {!! $user->firma !!} <br>
         {!! $user->miejscowosc !!} <br>
-        <a class="btn btn-info" href="{{route('users.edit', $user)}}">Edit</a>
+        <a class="btn btn-info" href="{{route('admin.users.edit', $user)}}">Edit</a>
         {!! link_to(URL::previous(), 'Powrót', ['class'=>'btn btn-default']) !!}
 @endsection

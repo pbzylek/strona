@@ -57,8 +57,8 @@ class UserMessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Messages $messages)
     {
-        //
+        return view('user.messages.show', compact('messages'));
     }
 }
