@@ -7,6 +7,7 @@ use App\Messages;
 use Auth;
 use Session;
 
+
 class UserMessageController extends Controller
 {
 
