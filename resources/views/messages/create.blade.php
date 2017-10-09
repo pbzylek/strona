@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-	{!! Form::open(['route'=>'messages.store']) !!}
+	{!! Form::open(['route'=>'admin.messages.store']) !!}
 
 	@if ($errors->any())
 		<ul class="alert alert-danger">

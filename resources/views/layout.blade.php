@@ -33,16 +33,25 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('index') }}">Strona Główna</a>
           </li>
-          @guest
+      @guest
 		  @else
-		  <li class="nav-item">
-            <a class="nav-link" href="{{ route('messages.index') }}">Wiadomości</a>
+		  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Wiadomości
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{{ route('messages.received') }}">Odebrane</a>
+              <a class="dropdown-item" href="{{ route('messages.send') }}">Wysłane</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Edytuj profil</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin') }}">Panel Administracyjny</a>
+          </li>
 		  @endguest
-		  <li class="nav-item">
+		      <li class="nav-item">
             <a class="nav-link" href="{{ route('kontakt') }}">Kontakt</a>
           </li>
         </ul>
@@ -57,14 +66,13 @@
         {{ csrf_field() }}
       </form>
         @endguest
-        </li>
+      </li>
       </div>
     </nav>
 
 
 
     <div class="container">
-
       <!-- Komunikaty Błędów -->
       @if (Session::has('success'))
           <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -107,8 +115,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ url('js/jquery-3.2.1.slim.min.js') }}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="{{ url('js/bootstrap.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="{{ url('js/angular.js') }}"></script>
     <script src="{{ url('js/custom.js') }}"></script>
   </body>
 </html>

@@ -21,7 +21,7 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        $messages = Messages::paginate(10);
+        $messages = Messages::orderBy('id', 'desc')->paginate(10);
 
         return view('messages.index', compact('messages'));
     }
@@ -34,7 +34,7 @@ class MessagesController extends Controller
     public function create()
     {
         $users=User::all();
-        return view('admin.messages.create', compact('users'));
+        return view('messages.create', compact('users'));
     }
 
     /**

@@ -20,12 +20,18 @@ class UserMessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function send()
+    {
+        $messages = Messages::where('od_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(10);
+
+        return view('user.messages.send', compact('messages'));
+    }
+
+    public function received()
     {
         $messages = Messages::where('do_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(10);
-        $messages2 = Messages::where('od_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(5);
 
-        return view('user.messages.index', compact('messages', 'messages2'));
+        return view('user.messages.received', compact('messages'));
     }
 
     /**
@@ -48,7 +54,7 @@ class UserMessageController extends Controller
     {
         Messages::create($request->all());
         Session::flash('success', 'Wiadomość została wysłana poprawnie');
-        return redirect()->route('messages.index');
+        return redirect()->route('messages.received');
     }
 
     /**

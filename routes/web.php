@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/kontakt', function () {
+Route::get('kontakt', function () {
     return view('kontakt');
 })->name('kontakt');
 
@@ -23,6 +23,10 @@ Route::group([
  'middleware' => 'roles',
  'roles' => ['Admin']
 ], function() {
+
+	Route::get('admin', function() {
+		return view('admin');
+	})->name('admin');
 
 	Route::get('admin/users', [
 		'uses' => 'UsersController@index',
@@ -91,9 +95,14 @@ Route::group([
 
 });
 
-Route::get('messages', [
-		'uses' => 'UserMessageController@index',
-		'as' => 'messages.index'
+Route::get('messages/received', [
+		'uses' => 'UserMessageController@received',
+		'as' => 'messages.received'
+]);
+
+Route::get('messages/send', [
+	'uses' => 'UserMessageController@send',
+	'as' => 'messages.send'
 ]);
 
 Route::get('messages/create', [
